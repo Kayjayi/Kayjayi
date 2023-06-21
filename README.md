@@ -1,6 +1,8 @@
 - 👋 Hi, I’m @Kayjayi
-- 👀 I’m interested in devOps
-- 🌱 I’m currently learning software development
+- 👀 I’m develop and deploy machine learning model
+- 🌱 I’m skilled in programming using python, MATLAB, and Java
+- 🌱 I leverage AI to develop tools in NLP, LLM, and transfer learning
+- 🌱 I’m currently lead software development
 - 💞️ I’m looking to collaborate on CI/CD
 - 📫 How to reach me kayodeajayi.m@gmail.com
 
