@@ -1,0 +1,40 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+namespace CreateBlobFolderClient
+{
+    class Program
+    {
+        private static readonly string functionUrl = "https://<your-function-app-name>.azurewebsites.net/api/CreateFolder"; // Replace with your function URL
+        private static readonly string directoryName = "my-folder"; // Replace with your directory name
+
+        static async Task Main(string[] args)
+        {
+            using HttpClient client = new HttpClient();
+
+            // Build the full URL with query parameter
+            string requestUrl = $"{functionUrl}?directoryName={directoryName}";
+
+            try
+            {
+                // Send POST request
+                HttpResponseMessage response = await client.PostAsync(requestUrl, null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine("Response: " + result);
+                }
+                else
+                {
+                    Console.WriteLine("Error: " + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+            }
+        }
+    }
+}
